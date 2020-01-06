@@ -1,10 +1,11 @@
-var program = require('commander');
+#!/usr/bin/env node
+const program = require('commander');
 var vfs = require('vinyl-fs');
 var through = require('through2');
-const chalk = require('chalk');
-const fs = require('fs-extra');
-const path = require('path');
-
+var chalk = require('chalk');
+var fs = require('fs-extra');
+var path = require('path');
+console.log('errrrr')
 // 定义版本号以及命令选项
 program
   .version('1.0.0')
@@ -17,7 +18,8 @@ if (program.init) {
   var projectPath = path.resolve(program.init);
   // 获取将要构建的的项目名称
   var projectName = path.basename(projectPath);
-  console.log(`Start to init a project in ${chalk.green(projectPath)}`);
+  var dirName = chalk.green(projectPath)
+  console.log('Start to init a project in ' + dirName);
 
   // 根据将要构建的项目名称创建文件夹
   fs.ensureDirSync(projectName);
@@ -31,7 +33,7 @@ if (program.init) {
     if (!file.stat.isFile()) {
       return callback();
     }
-
+    console.log('file:', file[0])
     this.push(file);
     return callback();
   }))
