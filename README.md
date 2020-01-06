@@ -11,7 +11,7 @@ react-cli init [projectName]
 
 # 项目目录
 
-|-react-cli
+|-react-cli                                                                                                                               
   |-bin                   // 可执行文件                                                                                                     
   |-lib                   // 可执行文件库文件
   |-templates             // 脚手架模板
